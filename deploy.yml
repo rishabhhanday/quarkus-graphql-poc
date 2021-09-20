@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: quarkus-graphql-poc
+  name: quarkus-graphql-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarkus-graphql-poc
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: quarkus-graphql-poc
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - image: rishabhhanday/quarkus-grpahql-eb
+        name: quarkus-graphql-poc
+        resources: {}
+status: {}
